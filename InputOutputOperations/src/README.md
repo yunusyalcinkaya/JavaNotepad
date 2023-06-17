@@ -17,3 +17,15 @@ InputStreamReader, dosyadan byte olarak okur ve karaktere dönüştürür. Buffe
 OutputStreamWriter, karakterleri dosyaya byte olarak yazar.
 Bunlar sayedinde unicode karakterler(örneğin: ü,ö,ş) üzerinde sorunsuz şekilde çalışılabilir.
 Örnek: StreamReaderAndWriter.java
+
+
+Serileştirme(Serialization), nesnenin durumunu byte akışına yazma sürecidir.
+Bu sayede dosyalara nesneler yazılabilri veya okunabilir.
+Bir nesne serileştirilecek ise:
+- Sınıf public olarak declare edilmelidir.
+- Sınıf Serializable arayüzünü implemente etmelidir.
+- Sınıfın argüman almayan constructor metodu olmalıdır
+- Sınıfın tüm alanları serileştirilebilmelidir. Örneğin içinde bir nesne varsa o nesne de Serializable arayüzünü
+    implemente eden sınıfdan türetilmiş olmalıdır.
+WriteAndReadTheObject örneği için Person sınıfı kullanılmıştır ve Person sınıfı içinde Sizes sınıfının bir instance'ı vardır.
+Person nesnesi dosyaya yazıldığında veya dosyadan okunduğunda otomatik olarak içerdiği instance da yazılır ve okunur.

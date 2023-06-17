@@ -35,6 +35,7 @@ public class FileWriterReaderAndScanner {
             * Bunun yerine bir buffer olarak kullanmak için bir char[] oluştur ve read() metoduna parametre olarak ver
             * char[] boyutunu ne kadar verirsen tek seferde o kadar karakter okur ve char array'a yazar
              */
+            // * read() metodu karakterlerin ascii karşılığını döndürür
             while((item = reader.read()) != -1){
                 System.out.print((char)item);
             }

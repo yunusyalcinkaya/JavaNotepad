@@ -1,6 +1,8 @@
 package example;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Driver {
@@ -49,11 +51,11 @@ public class Driver {
         personList.add(person2);
         personList.add(person3);
         personList.add(person4);
-
 /*
         listByAge(personList,15);
         listByGender(personList,Gender.MALE);
         listByAgeRange(personList,13,21);
+
 */
         filter(personList, p -> p.getAge() >= 15);
         filter(personList, p -> p.getGender().equals(Gender.MALE));

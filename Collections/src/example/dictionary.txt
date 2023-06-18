@@ -1,0 +1,5 @@
+mouse:Fare
+bag:çanta
+money:para
+carpet:halı
+book:kitap

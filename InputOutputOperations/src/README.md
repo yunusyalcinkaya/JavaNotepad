@@ -27,5 +27,5 @@ Bir nesne serileştirilecek ise:
 - Sınıfın argüman almayan constructor metodu olmalıdır
 - Sınıfın tüm alanları serileştirilebilmelidir. Örneğin içinde bir nesne varsa o nesne de Serializable arayüzünü
     implemente eden sınıfdan türetilmiş olmalıdır.
-WriteAndReadTheObject örneği için Person sınıfı kullanılmıştır ve Person sınıfı içinde Sizes sınıfının bir instance'ı vardır.
-Person nesnesi dosyaya yazıldığında veya dosyadan okunduğunda otomatik olarak içerdiği instance da yazılır ve okunur.
+WriteAndReadTheObject örneği için Person1 sınıfı kullanılmıştır ve Person1 sınıfı içinde Sizes sınıfının bir instance'ı vardır.
+Person1 nesnesi dosyaya yazıldığında veya dosyadan okunduğunda otomatik olarak içerdiği instance da yazılır ve okunur.

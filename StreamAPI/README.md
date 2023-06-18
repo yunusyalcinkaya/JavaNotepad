@@ -13,3 +13,12 @@
 - Stateless işlemlerde, her element diğer elementlerden bağımsız bir şekilde işleme sokulur.
 - Stateful işlemlerde, bir elementin işleme sokulması başka bir elemente bağlı olabilir.
 - Stream arayüzü nesne referansları ile çalıştığından ilkel veri tipleri ile çalışmaz. Bunun yerine wrapper sınıflar ile çalışan DoubleStream, IntStream, LongStream arayüzler mevcuttur.
+
+
+####Parallel Streams
+
+- Paralel stream'ler, sequential() metodu kullanılarak normal strema'lere çevrilebilirler.
+- Stream, sıralı vey karışık olabilir.
+- Performansın ön plana çıkması gerek durumlarda unordered() metodu kullanılarak, akışın karmaşık bir şekilde işleme alınması sağlanabilir.
+- Paralel stream'lerde forEach() metodu sıralamayı koruyamabilir.
+- Stream işlemi yapılırken elementlerin sırasının korunması istenirse forEachOrdered() metodu kullanılabilir.

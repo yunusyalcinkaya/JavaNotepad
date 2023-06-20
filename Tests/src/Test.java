@@ -1,26 +1,20 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Test {
-    public static boolean isOneBitCharacter(int[] bits) {
-
-        int prevIndex = 0, index = 0, bitsLen = bits.length;
-        while(index < bitsLen){
-
-            prevIndex = index;
-
-            if(bits[index] == 0)
-                index++;
-            else
-                index += 2;
-        }
-        return (index - prevIndex) == 1;
-    }
 
     public static void main(String[] args) {
-        int[] array1 = {1,0,0};
-        int[] array2 = {1,1,1,0};
-        int[] array3 = {1,1,1,0,0};
 
-        System.out.println(isOneBitCharacter(array1));
-        System.out.println(isOneBitCharacter(array2));
-        System.out.println(isOneBitCharacter(array3));
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        input = input.trim();// baştaki ve sondaki boşlukları alır
+        String[] arr1 = input.split("[ !,?._'@]+");
+        System.out.println(arr1.length);
+        Arrays.stream(arr1)
+                .forEach(System.out::println);
+
+
+
     }
 }

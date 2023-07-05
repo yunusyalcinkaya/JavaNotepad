@@ -1,20 +1,32 @@
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class Test {
 
     public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-
-        input = input.trim();// baştaki ve sondaki boşlukları alır
-        String[] arr1 = input.split("[ !,?._'@]+");
-        System.out.println(arr1.length);
-        Arrays.stream(arr1)
-                .forEach(System.out::println);
-
-
-
+        Scanner in = new Scanner(System.in);
+        Deque<Integer> deque = new ArrayDeque<Integer>();
+        int n = in.nextInt();
+        int m = in.nextInt();
+        Set<Integer> set = new HashSet<>();
+        int a = 0;
+        int num;
+        int setSize=0;
+        int removed;
+        for (int i = 0; i < n; i++) {
+            num = in.nextInt();
+            deque.addLast(num);
+            set.add(num);
+            if (i >= m - 1) {
+                setSize = set.size();
+                removed = deque.removeFirst();
+                if(!deque.contains(removed)){
+                    set.remove(removed);
+                }
+                if (setSize > a) {
+                    a = setSize;
+                }
+            }
+        }
+        System.out.println(a);
     }
 }

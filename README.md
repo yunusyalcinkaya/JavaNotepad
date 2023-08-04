@@ -1,0 +1,4 @@
+# JavaNotepad
+
+I added java libraries, API's, to remember how to use them when I need them.
+I made it easier to explain with the comment lines I wrote in the codes.

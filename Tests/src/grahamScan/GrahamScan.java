@@ -3,6 +3,7 @@ package grahamScan;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
 
 class Point {
@@ -19,11 +20,11 @@ public class GrahamScan {
 
     private static double determinant(Point p1, Point p2, Point p3) {
 
-        double result=       p1.x * (p2.y - p3.y)
+        return    p1.x * (p2.y - p3.y)
                 - p2.x * (p1.y - p3.y)
                 + p3.x * (p1.y - p2.y);
 
-        return result;
+
     }
 
     // Graham Scan
@@ -34,12 +35,14 @@ public class GrahamScan {
             double aciB = Math.atan2(p2.y - min.y, p2.x - min.x);
             return Double.compare(aciA, aciB);
         });
+
+        // ! test için küçük verilerle çalıştığında kullan
         /*
         System.out.println("Sorted points:");
         for (Point point : points) {
             System.out.println("("+point.x + "," + point.y+")");
-        }
-        */
+        }*/
+
         Stack<Point> stack = new Stack<>();
         stack.push(points[0]);
         stack.push(points[1]);
@@ -60,13 +63,12 @@ public class GrahamScan {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        System.out.println("start: "+ LocalDateTime.now());
-
-        File file = new File("test2.txt");
+        File file = new File("Tests/src/grahamScan/test.txt");
         Scanner scanner = new Scanner(file);
         List<Double> listOfx = new ArrayList<Double>();
         List<Double> listOfy = new ArrayList<Double>();
 
+        System.out.println("start read input file: "+ LocalTime.now());
         int index = 0;
         while(scanner.hasNext()){
             if(index%2 == 0)
@@ -77,32 +79,36 @@ public class GrahamScan {
         }
         scanner.close();
 
-        System.out.println("reading completed");
-        System.out.println("start: "+LocalDateTime.now());
+        System.out.println("reading completed: " + LocalTime.now());
+        System.out.println("start create points: "+LocalTime.now());
 
         Point[] points = new Point[index/2];
 
         for(int i =0; i<index/2; i++){
             points[i] = new Point(listOfx.get(i), listOfy.get(i));
         }
+        System.out.println("created points: "+LocalTime.now());
 
         Point min = points[0];
-
+        System.out.println("start search min point: "+LocalTime.now());
         for (Point point : points) {
             if((point.y < min.y) || (point.y == min.y && point.x < min.x)){
                 min = point;
             }
         }
+        System.out.println("found min point: "+LocalTime.now());
 
+        System.out.println("start convex hull algorithm: "+LocalTime.now());
         List<Point> convexHullPoints = convexHull(points,min);
+        System.out.println("end convex hull algorithm(selected convex huul points): "+LocalTime.now());
 
-        System.out.println("Convex Hull Points:");
+        // ! test için küçük verilerle çalıştığında kullan
+/*        System.out.println("Convex Hull Points:");
         for (Point p : convexHullPoints) {
             System.out.println("(" + p.x + ", " + p.y + ")");
-        }
+        }*/
 
-        System.out.println("selected convex hull points");
-        System.out.println("start: "+LocalDateTime.now());
+        System.out.println("start calculate max distance on convex hull points: "+LocalTime.now());
         Point point1=null;
         Point point2=null;
         double maxDistance=0;
@@ -120,6 +126,6 @@ public class GrahamScan {
         }
         System.out.println("Max distance= "+ maxDistance+", Points = "+"(" + point1.x +
                 "," +point1.y +")," + "(" + point2.x +","+point2.y+")");
-        System.out.println("end: "+LocalDateTime.now());
+        System.out.println("end: "+ LocalTime.now());
     }
 }

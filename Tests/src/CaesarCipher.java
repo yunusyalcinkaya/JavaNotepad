@@ -11,19 +11,19 @@ public class CaesarCipher {
     public static String caesarCipher(String s, int k){
 
         char[] arr = s.toCharArray();
-
+        k %= 26;
         for(int i=0; i<arr.length; i++){
             if(((int)arr[i] >= 65 && (int)arr[i] <= 90)){
-                if((int)arr[i] +(k%26) >90){
-                    arr[i] = (char)((((int)arr[i] +(k%26)) %91) +65);
+                if((int)arr[i] + k >90){
+                    arr[i] = (char)((((int)arr[i] +k) %91) +65);
                 }
-                else arr[i] = (char)((int)arr[i] +(k%26));
+                else arr[i] = (char)((int)arr[i] +k);
             }
             else if ((int)arr[i] >= 97 && (int)arr[i] <= 122) {
-                if((int)arr[i] +(k%26) >122){
-                    arr[i] = (char)((((int)arr[i] +(k%26)) %123) +97);
+                if((int)arr[i] +k >122){
+                    arr[i] = (char)((((int)arr[i] +k) %123) +97);
                 }
-                else arr[i] = (char)((int)arr[i] +(k%26));
+                else arr[i] = (char)((int)arr[i] +k);
             }
         }
         return new String(arr);

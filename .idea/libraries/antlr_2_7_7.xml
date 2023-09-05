@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="antlr-2.7.7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/antlr-2.7.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/classmate-1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/hibernate-commons-annotations-5.0.1.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/hibernate-core-5.2.11.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/javassist-3.20.0-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/jboss-logging-3.3.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/lucene-core-5.5.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/lucene-queryparser-5.5.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/xml-apis-1.3.03.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

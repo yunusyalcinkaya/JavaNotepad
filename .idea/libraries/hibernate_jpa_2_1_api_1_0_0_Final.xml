@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="hibernate-jpa-2.1-api-1.0.0.Final">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/provided/hibernate-jpa-2.1-api-1.0.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/provided/jboss-annotations-api_1.2_spec-1.0.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/provided/jboss-jms-api_2.0_spec-1.0.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../utils/hibernate/provided/jboss-transaction-api_1.2_spec-1.0.0.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

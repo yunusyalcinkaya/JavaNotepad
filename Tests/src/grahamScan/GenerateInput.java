@@ -38,7 +38,7 @@ public class GenerateInput {
     public static void main(String[] args) throws IOException {
 
         Random random = new Random();
-        FileWriter writer = new FileWriter("./test.txt",false);
+        FileWriter writer = new FileWriter("Tests/src/grahamScan/test.txt",false);
 
         for(int i =1 ; i <= 1000; i++){
 

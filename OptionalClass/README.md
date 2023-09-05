@@ -1,7 +1,7 @@
 Java 8 bir değerin bulunup bulunmadığının tespit edilebilmesi gibi durumları halledebilmek için Optional,
 OptionalDouble, OptionalInt ve OptionalLong sınıflarını getirmiştir.
 
-###class Optional<T>
+### class Optional\<T>
 - Optional nesnesi bir değere sahip olmak zorunda değildir.
 - Optional sınıfının yapıcısı yoktur. Optional metodları vardır.
 

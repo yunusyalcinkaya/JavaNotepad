@@ -1,4 +1,4 @@
-###Stream API
+### Stream API
 
 - Stream: Veri için bir kanaldır.
 - Koleksiyon veya dizi gibi bir veri kaynağında işlem yapar.
@@ -15,7 +15,7 @@
 - Stream arayüzü nesne referansları ile çalıştığından ilkel veri tipleri ile çalışmaz. Bunun yerine wrapper sınıflar ile çalışan DoubleStream, IntStream, LongStream arayüzler mevcuttur.
 
 
-####Parallel Streams
+#### Parallel Streams
 
 - Paralel stream'ler, sequential() metodu kullanılarak normal strema'lere çevrilebilirler.
 - Stream, sıralı vey karışık olabilir.

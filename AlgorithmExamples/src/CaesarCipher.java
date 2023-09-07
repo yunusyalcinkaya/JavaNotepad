@@ -1,6 +1,3 @@
-import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class CaesarCipher {
     /*
     ? Bir string verilecek. İçindeki harfleri k sonraki harfler ile değiştir

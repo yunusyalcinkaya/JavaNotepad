@@ -40,7 +40,7 @@ Explanation: There are three ways to climb to the top.
         for(long i=n; i>=stepCount; i--){
             result += (factorial(i).divide
                     (factorial(numberOfOne).multiply(factorial(numberOfTwo))))
-                    .intValue(); // permütasyon: sıralama
+                    .intValue();
             numberOfTwo += 1;
             numberOfOne -= 2;
         }

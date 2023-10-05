@@ -17,6 +17,7 @@ Example 2:
 Input: nums = [1,4,6,8,10]
 Output: [24,15,13,15,21]
  */
+    // complexity O(n^2)
     public static int[] getSumAbsoluteDifferences(int[] nums) {
         int[] response = new int[nums.length];
 
@@ -30,6 +31,7 @@ Output: [24,15,13,15,21]
         return response;
     }
 
+    // n*(n+1) -> O(n^2)
     public static int[] getSumAbsoluteDifferences2(int[] nums) {
         int[] response = new int[nums.length];
         int left = 0;
@@ -45,6 +47,7 @@ Output: [24,15,13,15,21]
         return response;
     }
 
+    // complexity 2*n -> O(n)
     public static int[] getSumAbsoluteDifferences3(int[] nums) {
         int len = nums.length;
         int left = 0;
@@ -54,7 +57,7 @@ Output: [24,15,13,15,21]
         int[] response = new int[len];
         reverse[len] = 0;
 
-        for(int i=0; i< nums.length; i++){
+        for(int i=0; i< len; i++){
             forward[i] = nums[i] + left;
             reverse[len-1-i] = nums[len-1-i] + right;
             left = forward[i];

@@ -49,7 +49,7 @@ public class SetDriver {
     }
 
     // * NavigableSet referansı ile
-    // * NavigableSet<>, SortedSet<>'i extend eder. TreeSet, NavigableSet'i extend eder
+    // * NavigableSet<>, SortedSet<>'i extend eder. TreeSet, NavigableSet'i implement eder
     public static void treeSet4(){
         NavigableSet<Integer> set = new TreeSet<>();
         set.add(11);
@@ -127,7 +127,7 @@ public class SetDriver {
      * */
     /* ? Aynı field'lara sahip nesnelerin HashSet içerisine eklenmesinin önüne geçmek için neden sadece
         ? equals() ya da hashCode() metodunu override etmek yetmiyor? */
-    // ? hashCode()'u override edip, equals()'u etmediğimiz zaman ayno hash code ile birden fazla nesneyi nasıl ekliyoruz?
+    // ? hashCode()'u override edip, equals()'u etmediğimiz zaman aynı hash code ile birden fazla nesneyi nasıl ekliyoruz?
     public static void hashSet2(){
         HashSet<Person2> set = new HashSet<>();
         set.add(new Person2(51,"person1"));
@@ -157,7 +157,7 @@ public class SetDriver {
         }
     }
 
-    /* * Yukarıda HashSet hakkında açıklama var. LinkedHashSet'in kullanım olarak tek farkı veriler eklenildiği
+    /* * Yukarıda object tutan HashSet hakkında açıklama var. LinkedHashSet'in kullanım olarak tek farkı veriler eklenildiği
         * sırada tutulur ve geri alınır. */
     public static void linkedHashSet2(){
         LinkedHashSet<Person2> set = new LinkedHashSet<>();
@@ -185,14 +185,14 @@ public class SetDriver {
         treeSet5();
         System.out.println(System.lineSeparator());
         treeSet6();
-//        System.out.println(System.lineSeparator());
-//        hashSet();
-//        System.out.println(System.lineSeparator());
-//        hashSet2();
-//        System.out.println(System.lineSeparator());
-//        linkedHashSet();
-//        System.out.println(System.lineSeparator());
-//        linkedHashSet2();
+        System.out.println(System.lineSeparator());
+        hashSet();
+        System.out.println(System.lineSeparator());
+        hashSet2();
+        System.out.println(System.lineSeparator());
+        linkedHashSet();
+        System.out.println(System.lineSeparator());
+        linkedHashSet2();
 
     }
 }

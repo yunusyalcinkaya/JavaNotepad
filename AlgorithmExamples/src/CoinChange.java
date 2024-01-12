@@ -1,8 +1,10 @@
-import java.util.Arrays;
-import java.util.Set;
+
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Logger;
 
 public class CoinChange {
+
+    Logger logger = Logger.getLogger(getClass().getName());
 
     public static int coinChange(int[] coins, int amount) {
 
@@ -21,14 +23,10 @@ public class CoinChange {
             while(currentAmount <= amount - coins[i]){
                 currentAmount += coins[i];
                 numCoins++;
-                if(map.get(amount - currentAmount) != null && map.get(amount) == null
-                        || (map.get(amount - currentAmount) != null && map.get(amount) != null && map.get(amount) > numCoins + map.get(amount - currentAmount)))
-                    map.put(amount, numCoins + map.get(amount - currentAmount));
 
-                Set<Integer> keySet = map.keySet();
-                for(int item : keySet){
-                    if((item + currentAmount <= amount && map.get(item + currentAmount) == null
-                            || item + currentAmount <= amount && map.get(item + currentAmount) != null && map.get(item + currentAmount) > numCoins + map.get(item)))
+                for(int item : map.keySet()){
+                    if(item + currentAmount <= amount &&
+                            (map.get(item + currentAmount) == null ||  map.get(item + currentAmount) > numCoins + map.get(item)))
                         map.put(item + currentAmount, numCoins + map.get(item));
                 }
 
@@ -48,6 +46,7 @@ public class CoinChange {
         System.out.println(coinChange(new int[] {1,2,5}, 11));
         System.out.println(coinChange(new int[] {1,2,5,10}, 18));
         System.out.println(coinChange(new int[] {493,416,144,164,314,25}, 5607));
+        System.out.println(coinChange(new int[] {122,112,383,404,25,368}, 6977));
     }
     // https://leetcode.com/problems/coin-change/
 }

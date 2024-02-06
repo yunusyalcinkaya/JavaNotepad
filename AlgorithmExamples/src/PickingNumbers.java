@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -15,7 +14,7 @@ public class PickingNumbers {
         int counter = 1;
         int max = 0;
         boolean flag = true;
-        int diff = 0;
+
 
         Map<Integer,Integer> map = new HashMap<>();
         int index = 1;

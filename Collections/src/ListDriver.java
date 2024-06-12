@@ -9,7 +9,7 @@ public class ListDriver {
     // * İstenilen index'e veri eklenebilir, istenilen index'teki veri alınabilir.
     public static void linkedList1(){
         LinkedList<Integer> list = new LinkedList<>();
-        // ? Burada LinkedList yapısı Integet(wrapper) type alıyor ama biz int(primitif) type veriyoruz.
+        // ? Burada LinkedList yapısı Integer(wrapper) type alıyor ama biz int(primitif) type veriyoruz.
         // ? Bu dönüşüm otomatik yapılıyor. Buna "autoboxing" denir.(tersi: "auto-unboxing")
         list.add(51);
         list.add(38);

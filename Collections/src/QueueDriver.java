@@ -111,6 +111,11 @@ public class QueueDriver {
     public static void priorityQueueCustomOrder(){
         // Öğrencileri notlarına göre öncelikli olarak sıralayan PriorityQueue
         PriorityQueue<Student> studentQueue = new PriorityQueue<>(Comparator.comparingInt(s -> s.grade));
+        HashMap<Integer, List<Integer>> map = new HashMap<>();
+
+        List<Integer> list = map.get(110);
+
+        list.add(12);
 
         // Öğrencileri ekleyelim
         studentQueue.add(new Student("Ahmet", 90));

@@ -12,6 +12,7 @@ public class SetDriver {
         set.add(10);
         set.add(4);
 
+
         for (int item : set) {
             System.out.println(item);
         }
@@ -37,12 +38,12 @@ public class SetDriver {
         SortedSet<Person1> set = new TreeSet<>();
         set.add(new Person1(22,"person1"));
         set.add(new Person1(55,"person2"));
-        set.add(new Person1(33,"person3"));
+        set.add(new Person1(33,"person4"));
         set.add(new Person1(44,"person4"));
         /* ? Bu satırı set'e eklemez. Çünkü Person sınıfının compareTo() metodu age alanına göre karşılaştırma yapıyor.
            ? age alanı 44 olan veri zaten olduğu için ekeleme yapılmaz. Eğer compareTo() metodunu name alanlarını
             ? karşılaştırcak şekilde yazsaydık aynı name alanına sahip Person nesnelerini ekleyemeyecektik. */
-        set.add(new Person1(44,"person5"));
+        set.add(new Person1(44,"person4"));
         for (Person1 person : set){
             System.out.println(person.getAge() + " " + person.getName());
         }
@@ -117,17 +118,15 @@ public class SetDriver {
     // * Object tutan HashSet.
     /* ! TreeSet için Object, Comparable arayüzünü implemente etmek zorundaydı. Çünkü sıralı tutuyordu ve compareTo metodu şarttı.
         ! Ama HashSet için bu zorunluluk yok */
-    /* * HashSet içinde tutulan nesnenin oluşturulduğu sınıf içerisinde compareTo() metodu override edilmediyse
+    /* * HashSet içinde tutulan nesnenin oluşturulduğu sınıf içerisinde hashCode() ve equals() metodu override edilmediyse
         * aynı alanlara(field) sahip nesneler eklenebilir. Çünkü nesnelerin hashCode'larına bakılır. Bu yüzden
-        * aynı veriyi tutmak istemiyorsak hashCode() ve equals() metodları override edilmeli */
+        * aynı veriyi tutmak istemiyorsak hashCode() ve equals() metodları override edilmeli
+        * */
     /* * hashCode() metodunu override etmediğimiz zaman bütün nesnelerin hashCode değeri farklı olacaktır.
         * hashCode() metodunu override edip, equals() metodunu override etmediğimiz zaman, özellikleri aynı
         * olan nesnelerin hashCode değeri aynı olur fakat yine de HashSet içerisine eklenir. equals() metodu da
         * override edildiği zaman istediğimiz olması gerektiği gibi çalışır.
      * */
-    /* ? Aynı field'lara sahip nesnelerin HashSet içerisine eklenmesinin önüne geçmek için neden sadece
-        ? equals() ya da hashCode() metodunu override etmek yetmiyor? */
-    // ? hashCode()'u override edip, equals()'u etmediğimiz zaman aynı hash code ile birden fazla nesneyi nasıl ekliyoruz?
     public static void hashSet2(){
         HashSet<Person2> set = new HashSet<>();
         set.add(new Person2(51,"person1"));
